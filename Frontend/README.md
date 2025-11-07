@@ -1,16 +1,90 @@
-# React + Vite
+# React Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend application built with React and Vite for the React-Flask application.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- Vite
+- JavaScript/JSX
+- CSS
 
-## React Compiler
+## Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js (>= 14.x)
+- npm or yarn
 
-## Expanding the ESLint configuration
+## Setup and Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+The application will be available at `http://localhost:5173` by default.
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint for code quality
+
+## Project Structure
+
+```
+Frontend/
+├── public/            # Public assets
+├── src/               # Source files
+│   ├── assets/        # Static assets
+│   ├── App.jsx        # Main App component
+│   ├── App.css        # App styles
+│   ├── main.jsx       # Entry point
+│   ├── index.css      # Global styles
+│   └── Service.js     # API service functions
+├── index.html         # HTML template
+├── package.json       # Project dependencies and scripts
+├── vite.config.js     # Vite configuration
+└── eslint.config.js   # ESLint configuration
+```
+
+## Docker Support
+
+The application includes Docker support. To build and run using Docker:
+
+```bash
+docker build -t react-frontend .
+docker run -p 5173:5173 react-frontend
+```
+
+## Environment Variables
+
+Create a `.env` file in the frontend directory with your environment variables:
+- `VITE_API_URL=http://localhost:5000` # Backend API URL
+
+## Building for Production
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+The built files will be in the `dist` directory.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
